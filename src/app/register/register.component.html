@@ -1,0 +1,48 @@
+<h1>Customer Registeration</h1>
+<div class="form">
+    <form [formGroup]="customerInfo" action="" method="POST" role="form" class="php-email-form">
+      <div class="row">
+        <div class="form-group col-lg-6">
+          <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" formControlName="FullName">
+          <span *ngIf="customerInfo.get('FullName')?.invalid && customerInfo.get('FullName')?.touched" class="help-block text-danger">Enter Full Name Required</span>
+        </div>
+        <div class="form-group col-lg-6 mt-3 mt-lg-0">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" formControlName="email">
+          <span *ngIf="customerInfo.get('email')?.invalid && customerInfo.get('email')?.touched" class="help-block text-danger">Enter a valid emailId</span>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="address1" id="address1" placeholder="Street Address" formControlName="address1">
+        <span *ngIf="customerInfo.get('address1')?.invalid && customerInfo.get('address1')?.touched" class="help-block text-danger">Enter Address</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="address2" id="address2" placeholder="Street Address Line 2" formControlName="address2">
+        <span *ngIf="customerInfo.get('address2')?.invalid && customerInfo.get('address2')?.touched" class="help-block text-danger">Enter Address</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="city" id="city" placeholder="City" formControlName="city">
+        <span *ngIf="customerInfo.get('city')?.invalid && customerInfo.get('city')?.touched" class="help-block text-danger">Enter Valid City</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="state" id="state" placeholder="State" formControlName="state">
+        <span *ngIf="customerInfo.get('state')?.invalid && customerInfo.get('state')?.touched" class="help-block text-danger">Enter State</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Postal/PinCode" formControlName="pinCode">
+        <span *ngIf="customerInfo.get('pinCode')?.invalid && customerInfo.get('pinCode')?.touched" class="help-block text-danger">Enter Valid PinCode</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="country" id="country" placeholder="Country" formControlName="country">
+        <span *ngIf="customerInfo.get('country')?.invalid && customerInfo.get('country')?.touched" class="help-block text-danger">Enter Country</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="phoneno" id="phoneno" placeholder="Phone Number" formControlName="phoneNo">
+        <span *ngIf="customerInfo.get('phoneNo')?.invalid && customerInfo.get('phoneNo')?.touched" class="help-block text-danger">Enter Valid Phone Number</span>
+      </div>
+      <div class="form-group mt-3">
+        <input type="text" class="form-control" name="dob" id="dob" placeholder="Date Of Birth" formControlName="dob">
+        <span *ngIf="customerInfo.get('dob')?.invalid && customerInfo.get('dob')?.touched" class="help-block text-danger">Enter Valid Date of Birth</span>
+      </div>
+      <div class="text-center mt-3"><button type="submit" class="btn btn-primary" title="Send Message" [disabled]="!customerInfo.valid">Submit</button></div>
+    </form>
+  </div>
