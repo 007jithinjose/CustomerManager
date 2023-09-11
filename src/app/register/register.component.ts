@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
       state: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       country: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       pinCode: new FormControl('',[Validators.required,Validators.pattern('^[1-9][0-9]*')]),
-      phoneNo : new FormControl('',[Validators.required,Validators.maxLength(10)]),
+      phoneNo : new FormControl('',[Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
       dob : new FormControl('',Validators.required)
     });
   }
